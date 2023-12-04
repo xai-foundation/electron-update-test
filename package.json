@@ -1,9 +1,9 @@
 {
-  "name": "electron-updater-example",
-  "version": "0.8.1",
+  "name": "electron-update-test",
+  "version": "0.1.1",
   "main": "main.js",
-  "description": "electron-updater example project",
-  "author": "Matt Haggard",
+  "description": "electron-updater test project",
+  "author": "Xai Foundation",
   "scripts": {
     "publish": "electron-builder -p always"
   },
@@ -17,8 +17,15 @@
     "electron-updater": "^4.3.9"
   },
   "build": {
-    "appId": "com.github.iffy.electronupdaterexample",
+    "appId": "com.github.xaifoundation.electronupdatetest",
     "afterSign": "./build/notarize.js",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "xai-foundation",
+        "repo": "electron-update-test"
+      }
+    ],
     "mac": {
       "category": "your.app.category.type"
     },
